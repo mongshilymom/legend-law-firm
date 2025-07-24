@@ -4,7 +4,7 @@
   "description": "김앤장 초월 레전드 법무법인 템플릿",
   "main": "index.html",
   "scripts": {
-    "dev": "python -m http.server 3000",
+    "dev": "python server.py",
     "build": "echo 'Build completed'",
     "deploy": "vercel --prod",
     "monitor:competitors": "node scripts/monitor-competitors.js",
