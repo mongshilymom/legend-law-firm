@@ -1,0 +1,81 @@
+{
+  "timestamp": "2025-07-24T06:25:19.170Z",
+  "competitors": [
+    {
+      "name": "김앤장",
+      "url": "https://www.kimchang.com",
+      "status": "SUCCESS",
+      "lastUpdated": "2025-07-24T06:25:19.181Z",
+      "keywordMatches": 7,
+      "newContent": [
+        "김앤장 신규 채용 공고 발견",
+        "김앤장 주요 사건 수임 소식"
+      ],
+      "changes": {
+        "website_updates": 2,
+        "news_articles": 6,
+        "job_postings": 0
+      },
+      "priority": "HIGH",
+      "alerts": [
+        "중요 변화 감지"
+      ]
+    },
+    {
+      "name": "태평양",
+      "url": "https://www.shinkim.com",
+      "status": "SUCCESS",
+      "lastUpdated": "2025-07-24T06:25:19.182Z",
+      "keywordMatches": 19,
+      "newContent": [
+        "태평양 신규 채용 공고 발견",
+        "태평양 주요 사건 수임 소식",
+        "태평양 조직 개편 뉴스"
+      ],
+      "changes": {
+        "website_updates": 1,
+        "news_articles": 3,
+        "job_postings": 2
+      },
+      "priority": "HIGH",
+      "alerts": [
+        "중요 변화 감지"
+      ]
+    },
+    {
+      "name": "광장",
+      "url": "https://www.kwangjoong.co.kr",
+      "status": "SUCCESS",
+      "lastUpdated": "2025-07-24T06:25:19.182Z",
+      "keywordMatches": 5,
+      "newContent": [
+        "광장 신규 채용 공고 발견",
+        "광장 주요 사건 수임 소식"
+      ],
+      "changes": {
+        "website_updates": 0,
+        "news_articles": 4,
+        "job_postings": 2
+      },
+      "priority": "MEDIUM",
+      "alerts": []
+    },
+    {
+      "name": "지평",
+      "url": "https://www.jipyong.com",
+      "status": "SUCCESS",
+      "lastUpdated": "2025-07-24T06:25:19.182Z",
+      "keywordMatches": 5,
+      "newContent": [
+        "지평 신규 채용 공고 발견"
+      ],
+      "changes": {
+        "website_updates": 0,
+        "news_articles": 0,
+        "job_postings": 0
+      },
+      "priority": "MEDIUM",
+      "alerts": []
+    }
+  ]
+}

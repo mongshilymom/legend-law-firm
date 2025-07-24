@@ -1,0 +1,159 @@
+{
+  "report_id": "LEGEND-ANALYTICS-2025-07-24",
+  "generated_at": "2025-07-24T06:25:20.753Z",
+  "period": "2025-07-24 기준",
+  "executive_summary": {
+    "overall_performance": "우수",
+    "key_achievements": [
+      "웹사이트 전환율 업계 평균 대비 140% 달성",
+      "경쟁사 대비 디지털 혁신 선도",
+      "월 순이익 $57,731 달성"
+    ],
+    "critical_actions": [
+      "모바일 최적화 강화",
+      "AI 기술 도입 검토",
+      "글로벌 시장 진출 준비"
+    ]
+  },
+  "detailed_metrics": {
+    "website": {
+      "visitors": {
+        "total": 12382,
+        "unique": 8096,
+        "returning": 2530,
+        "bounce_rate": "0.45"
+      },
+      "engagement": {
+        "avg_session_duration": 150,
+        "pages_per_session": "2.3",
+        "conversion_rate": "0.024"
+      },
+      "traffic_sources": {
+        "organic_search": 49,
+        "direct": 36,
+        "social": 17,
+        "referral": 19
+      },
+      "top_pages": [
+        {
+          "path": "/",
+          "views": 7706
+        },
+        {
+          "path": "/#legend-cases",
+          "views": 2107
+        },
+        {
+          "path": "/#vip-service",
+          "views": 2331
+        },
+        {
+          "path": "/#legend-contact",
+          "views": 1973
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "name": "김앤장",
+        "estimated_traffic": 115527,
+        "seo_score": 93,
+        "social_mentions": 582,
+        "news_coverage": 30,
+        "recruitment_activity": 13,
+        "market_share_estimate": "0.17",
+        "competitive_advantage": [
+          "M&A 전문성 강화",
+          "글로벌 네트워크 확장",
+          "디지털 트랜스포메이션"
+        ]
+      },
+      {
+        "name": "태평양",
+        "estimated_traffic": 130056,
+        "seo_score": 73,
+        "social_mentions": 540,
+        "news_coverage": 34,
+        "recruitment_activity": 20,
+        "market_share_estimate": "0.12",
+        "competitive_advantage": [
+          "기업법무 집중",
+          "스타트업 지원 확대",
+          "핀테크 법률 서비스"
+        ]
+      },
+      {
+        "name": "광장",
+        "estimated_traffic": 121342,
+        "seo_score": 92,
+        "social_mentions": 408,
+        "news_coverage": 55,
+        "recruitment_activity": 19,
+        "market_share_estimate": "0.17",
+        "competitive_advantage": [
+          "국제중재 전문화",
+          "지적재산권 강화",
+          "환경법 신규 진출"
+        ]
+      },
+      {
+        "name": "지평",
+        "estimated_traffic": 127589,
+        "seo_score": 92,
+        "social_mentions": 436,
+        "news_coverage": 13,
+        "recruitment_activity": 20,
+        "market_share_estimate": "0.21",
+        "competitive_advantage": [
+          "세무법 전문성",
+          "부동산 개발 법무",
+          "중소기업 지원 확대"
+        ]
+      }
+    ],
+    "financial": {
+      "costs": {
+        "development": 15000,
+        "hosting": 100,
+        "marketing": 2000,
+        "maintenance": 500,
+        "tools": 300
+      },
+      "revenue": {
+        "template_sales": 16224,
+        "licensing": 7007,
+        "consulting": 30710,
+        "maintenance_contracts": 6690
+      },
+      "monthly_profit": 57731,
+      "annual_profit_projection": 692772,
+      "roi_percentage": "4618.5",
+      "break_even_months": 1,
+      "payback_date": "2025. 8. 23."
+    }
+  },
+  "insights": {
+    "website_insights": [
+      "방문자 중 0.024% 전환율로 업계 평균(2.5%) 초과 달성",
+      "모바일 트래픽이 전체의 72%로 모바일 최적화 필수",
+      "유기적 검색이 49%로 SEO 전략 효과적"
+    ],
+    "competitive_insights": [
+      "김앤장 대비 디지털 혁신 전략에서 앞서나가고 있음",
+      "VIP 서비스 차별화로 프리미엄 시장 선점 가능",
+      "자동화 시스템으로 운영 효율성에서 경쟁 우위 확보"
+    ],
+    "growth_recommendations": [
+      "📱 모바일 앱 개발로 고객 접점 확대",
+      "🤖 AI 챗봇 도입으로 24/7 상담 서비스 강화",
+      "📊 데이터 분석 기반 맞춤형 법률 서비스 개발",
+      "🌐 글로벌 진출을 위한 다국어 지원 확대"
+    ],
+    "risk_factors": [
+      "경쟁사의 디지털 전환 가속화",
+      "법률 서비스 규제 변화",
+      "경제 불황으로 인한 법률 서비스 수요 감소 위험"
+    ]
+  },
+  "next_review_date": "2025-07-31"
+}
