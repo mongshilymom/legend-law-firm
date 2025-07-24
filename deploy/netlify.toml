@@ -1,0 +1,52 @@
+[build]
+  publish = "."
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com;"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[functions]]
+  directory = "scripts/"
+  node_bundler = "esbuild"
+
+[functions."monitor-competitors"]
+  schedule = "0 * * * *"
+
+[functions."analytics"]  
+  schedule = "0 6 * * *"
+
+[functions."drive-sync"]
+  schedule = "0 */4 * * *"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs.thresholds]
+    performance = 0.9
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.9
+
+[[plugins]]
+  package = "netlify-plugin-sitemap"
+
+  [plugins.inputs]
+    buildDir = "."
+    exclude = [
+      "/admin/**",
+      "/scripts/**"
+    ]

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://legend-law-firm.vercel.app/sitemap.xml

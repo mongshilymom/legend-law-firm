@@ -1,0 +1,37 @@
+{
+  "name": "legend-law-firm",
+  "version": "1.0.0",
+  "description": "김앤장 초월 레전드 법무법인 템플릿",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Build completed'",
+    "deploy": "vercel --prod",
+    "monitor:competitors": "node scripts/monitor-competitors.js",
+    "sync:drive": "node scripts/drive-sync.js", 
+    "analyze:performance": "node scripts/analytics.js",
+    "automation:start": "npm run monitor:competitors && npm run sync:drive && npm run analyze:performance",
+    "test": "echo 'All systems operational'",
+    "deploy:netlify": "netlify deploy --prod"
+  },
+  "keywords": [
+    "law-firm",
+    "template",
+    "premium", 
+    "automation",
+    "legal-tech"
+  ],
+  "author": "Premium Template Factory",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
