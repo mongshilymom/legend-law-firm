@@ -2,8 +2,15 @@
 <html lang="ko" class="scroll-smooth">
 <head>
     <!-- 김앤장 초월 메타태그 -->
-    <title>LEGEND LAW FIRM | 15년 무패신화의 전설</title>
-    <meta name="description" content="재벌총수들이 인정한 대한민국 최고의 변호사. 15년간 2,847건 연속 승소, ₩50조 승소금액의 레전드.">
+    <title>LEGEND LAW FIRM | 김앤장도 인정한 대한민국 1위 전설의 로펌</title>
+    <meta name="description" content="전 대법원장이 인증한 대한민국 최고의 변호사. 15년간 2,847건 연속 승소, ₩50조 승소금액의 진짜 레전드. 김앤장, 태평양도 부러워하는 Magic Circle 로펌.">
+    <meta name="keywords" content="김앤장, 태평양, 광장, 지평, 대법원장, 변호사, 로펌, Magic Circle, 글로벌, VIP, 레전드">
+    <meta property="og:title" content="LEGEND LAW FIRM | 김앤장도 인정한 전설의 로펌">
+    <meta property="og:description" content="전 대법원장 인증, 글로벌 CEO 감사패. 15년 무패신화의 진짜 레전드가 여기 있습니다.">
+    <meta property="og:image" content="https://legend-law-firm.vercel.app/assets/legend-og-image.jpg">
+    <meta property="og:url" content="https://legend-law-firm.vercel.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- 럭셔리 디자인 시스템 -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,14 +19,52 @@
             theme: {
                 extend: {
                     colors: {
-                        'legend-black': '#0A0A0A',
+                        'legend-black': '#000000',
+                        'legend-dark': '#0A0A0A', 
                         'legend-gold': '#FFD700',
                         'legend-platinum': '#E5E4E2',
-                        'legend-crimson': '#DC143C'
+                        'legend-crimson': '#DC143C',
+                        'legend-silver': '#C0C0C0',
+                        'legend-bronze': '#CD7F32'
                     },
                     fontFamily: {
                         'legend': ['Playfair Display', 'serif'],
-                        'premium': ['Inter', 'sans-serif']
+                        'premium': ['Inter', 'sans-serif'],
+                        'luxury': ['Crimson Text', 'serif']
+                    },
+                    backgroundImage: {
+                        'legend-gradient': 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)',
+                        'gold-gradient': 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                        'luxury-pattern': "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23FFD700\" fill-opacity=\"0.03\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
+                    },
+                    animation: {
+                        'luxury-fade': 'luxuryFade 2s ease-in-out infinite',
+                        'gold-shimmer': 'goldShimmer 2s linear infinite',
+                        'scale-pulse': 'scalePulse 2s ease-in-out infinite',
+                        'slide-up': 'slideUp 1s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        luxuryFade: {
+                            '0%, 100%': { opacity: '0.5' },
+                            '50%': { opacity: '1' }
+                        },
+                        goldShimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        },
+                        scalePulse: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(255, 215, 0, 0.6)' }
+                        }
                     }
                 }
             }
@@ -28,218 +73,363 @@
     
     <!-- 프리미엄 애니메이션 -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Legend Law Firm",
+        "description": "김앤장도 인정한 대한민국 최고의 법무법인. 전 대법원장 인증, 15년 무패신화.",
+        "url": "https://legend-law-firm.vercel.app",
+        "telephone": "02-0000-LEGEND",
+        "email": "legend@premium-law.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "테헤란로 152, 롯데월드타워 76-80층",
+            "addressLocality": "강남구",
+            "addressRegion": "서울시",
+            "addressCountry": "KR"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "2847"
+        },
+        "priceRange": "₩₩₩₩₩"
+    }
+    </script>
 </head>
 
-<body class="bg-legend-black text-white overflow-x-hidden">
-    <!-- 🎬 CINEMATIC INTRO -->
-    <div id="legend-intro" class="fixed inset-0 z-50 bg-legend-black flex items-center justify-center">
-        <div class="text-center">
-            <div class="text-6xl text-legend-gold mb-8 animate-pulse">⚖️</div>
-            <div class="text-4xl font-legend text-legend-gold mb-4">LEGEND LAW FIRM</div>
-            <div class="text-xl text-legend-platinum">15년 무패신화의 전설이 시작됩니다...</div>
+<body class="bg-legend-black text-white overflow-x-hidden selection:bg-legend-gold selection:text-legend-black">
+    <!-- 🎬 ULTRA PREMIUM INTRO -->
+    <div id="legend-intro" class="fixed inset-0 z-50 bg-legend-gradient flex items-center justify-center">
+        <div class="text-center relative">
+            <!-- Premium Logo Animation -->
+            <div class="relative mb-12">
+                <div class="absolute inset-0 animate-glow rounded-full"></div>
+                <div class="w-32 h-32 mx-auto bg-gold-gradient rounded-full flex items-center justify-center animate-scale-pulse relative z-10">
+                    <span class="text-6xl text-legend-black">⚖️</span>
+                </div>
+            </div>
+            
+            <div class="space-y-6">
+                <h1 class="text-5xl lg:text-7xl font-legend font-black text-legend-gold animate-luxury-fade">
+                    LEGEND LAW FIRM
+                </h1>
+                <div class="text-xl lg:text-2xl text-legend-platinum font-light tracking-wider">
+                    김앤장도 인정한 <span class="text-legend-gold font-semibold">대한민국 1위</span> 전설의 로펌
+                </div>
+                <div class="text-lg text-legend-silver animate-pulse">
+                    15년 무패신화의 레전드가 시작됩니다...
+                </div>
+            </div>
+            
+            <!-- Loading Bar -->
+            <div class="w-64 h-1 bg-legend-dark rounded-full mx-auto mt-12 overflow-hidden">
+                <div class="h-full bg-legend-gold rounded-full animate-gold-shimmer" style="width: 0%; animation: loadingBar 3s ease-out forwards;"></div>
+            </div>
         </div>
     </div>
 
-    <!-- 🏛️ LEGEND NAVIGATION -->
-    <nav class="fixed w-full top-0 z-40 bg-legend-black/80 backdrop-blur-xl border-b border-legend-gold/20">
+    <!-- 🏛️ ULTRA LUXURY NAVIGATION -->
+    <nav class="fixed w-full top-0 z-40 bg-legend-black/95 backdrop-blur-2xl border-b border-legend-gold/30 shadow-2xl">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-legend-gold rounded-lg flex items-center justify-center">
-                        <span class="text-legend-black font-bold text-xl">⚖</span>
+                <!-- Premium Logo -->
+                <div class="flex items-center space-x-4 group cursor-pointer">
+                    <div class="w-14 h-14 bg-gold-gradient rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg">
+                        <span class="text-legend-black font-bold text-2xl">⚖</span>
                     </div>
                     <div>
-                        <div class="text-2xl font-legend font-bold text-legend-gold">LEGEND LAW</div>
-                        <div class="text-xs text-legend-platinum tracking-wider">15 YEARS UNDEFEATED</div>
+                        <div class="text-2xl font-legend font-black text-legend-gold tracking-tight">LEGEND LAW</div>
+                        <div class="text-xs text-legend-platinum tracking-widest font-medium">SINCE 2009 • 15 YEARS UNDEFEATED</div>
                     </div>
                 </div>
                 
+                <!-- Premium Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="#legend-cases" class="text-legend-platinum hover:text-legend-gold transition-all">Legendary Cases</a>
-                    <a href="#vip-service" class="text-legend-platinum hover:text-legend-gold transition-all">VIP Service</a>
-                    <a href="#global-network" class="text-legend-platinum hover:text-legend-gold transition-all">Global Network</a>
-                    <a href="#legend-contact" class="bg-legend-gold text-legend-black px-8 py-3 rounded-lg font-bold hover:bg-yellow-400 transition-all">
-                        레전드 상담 신청
+                    <a href="#legendary-cases" class="text-legend-platinum hover:text-legend-gold transition-all duration-300 font-medium tracking-wide relative group">
+                        Legendary Cases
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-legend-gold transition-all duration-300 group-hover:w-full"></span>
                     </a>
+                    <a href="#premium-testimonials" class="text-legend-platinum hover:text-legend-gold transition-all duration-300 font-medium tracking-wide relative group">
+                        VIP Testimonials
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-legend-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#global-network" class="text-legend-platinum hover:text-legend-gold transition-all duration-300 font-medium tracking-wide relative group">
+                        Global Network
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-legend-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#legend-contact" class="bg-gold-gradient text-legend-black px-8 py-3 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-legend-gold">
+                        👑 VIP 상담 신청
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button class="text-legend-gold text-2xl" onclick="toggleMobileMenu()">
+                        <span id="hamburger">☰</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-6 pb-4 border-t border-legend-gold/20">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#legendary-cases" class="text-legend-platinum hover:text-legend-gold transition-all">Legendary Cases</a>
+                    <a href="#premium-testimonials" class="text-legend-platinum hover:text-legend-gold transition-all">VIP Testimonials</a>
+                    <a href="#global-network" class="text-legend-platinum hover:text-legend-gold transition-all">Global Network</a>
+                    <a href="#legend-contact" class="bg-gold-gradient text-legend-black px-6 py-3 rounded-lg font-bold text-center">VIP 상담 신청</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- 🔥 HERO SECTION - 압도적 첫인상 -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- 시네마틱 배경 -->
-        <div class="absolute inset-0 bg-gradient-to-br from-legend-black via-gray-900 to-legend-black">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNGRkQ3MDAiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NGgwdjJoNHY0aDJWNmg0VjRINnYtNGgtMnY0SDB2Mmg0djRoMnYtNGg0di0ySDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30"></div>
+    <!-- 🔥 ULTRA PREMIUM HERO SECTION -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden bg-legend-gradient">
+        <!-- Ultra Luxury Background -->
+        <div class="absolute inset-0">
+            <!-- Animated Particles -->
+            <div class="absolute inset-0 bg-luxury-pattern opacity-20"></div>
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-legend-black via-transparent to-legend-dark opacity-80"></div>
+            <!-- Floating Elements -->
+            <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-legend-gold rounded-full animate-ping"></div>
+            <div class="absolute top-3/4 right-1/4 w-1 h-1 bg-legend-gold rounded-full animate-pulse"></div>
+            <div class="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-legend-gold rounded-full animate-bounce"></div>
         </div>
         
         <div class="relative z-10 container mx-auto px-6 text-center">
-            <!-- 프리미엄 배지 -->
-            <div class="inline-flex items-center bg-legend-gold/20 backdrop-blur-sm border border-legend-gold/50 rounded-full px-8 py-3 mb-12" data-aos="fade-up">
-                <span class="w-3 h-3 bg-legend-gold rounded-full mr-4 animate-pulse"></span>
-                <span class="text-legend-gold font-bold tracking-wider">15년 무패신화 • 2,847건 연속승소 • ₩50조 승소금액</span>
+            <!-- Ultra Premium Badge -->
+            <div class="inline-flex items-center bg-gradient-to-r from-legend-gold/20 via-legend-gold/10 to-legend-gold/20 backdrop-blur-sm border border-legend-gold/50 rounded-full px-10 py-4 mb-16 group hover:scale-105 transition-all duration-500" data-aos="fade-up">
+                <span class="w-4 h-4 bg-legend-gold rounded-full mr-5 animate-pulse shadow-lg"></span>
+                <span class="text-legend-gold font-bold tracking-wider text-lg">🏆 김앤장도 인정한 • 2,847건 연속승소 • ₩50조 승소금액 • 전 대법원장 인증</span>
+                <span class="w-4 h-4 bg-legend-gold rounded-full ml-5 animate-pulse shadow-lg"></span>
             </div>
             
-            <!-- 레전드 타이틀 -->
-            <h1 class="text-7xl lg:text-9xl font-legend font-black text-legend-gold mb-8 leading-none" data-aos="fade-up" data-aos-delay="200">
-                THE<br>
-                <span class="text-white">LEGEND</span><br>
-                <span class="bg-gradient-to-r from-legend-gold to-yellow-400 bg-clip-text text-transparent">LAW FIRM</span>
+            <!-- Ultra Legend Title -->
+            <h1 class="text-6xl lg:text-8xl xl:text-9xl font-legend font-black mb-12 leading-none" data-aos="fade-up" data-aos-delay="200">
+                <span class="text-legend-gold drop-shadow-2xl">THE</span><br>
+                <span class="text-white drop-shadow-2xl">ULTIMATE</span><br>
+                <span class="bg-gradient-to-r from-legend-gold via-yellow-400 to-legend-gold bg-clip-text text-transparent animate-gold-shimmer">LEGEND</span>
             </h1>
             
-            <!-- 임팩트 서브타이틀 -->
-            <p class="text-2xl lg:text-4xl text-legend-platinum mb-12 max-w-4xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="400">
-                재벌총수들이 인정한 <span class="text-legend-gold font-bold">대한민국 최고의 변호사</span><br>
-                <span class="text-legend-crimson font-bold">"불가능을 가능으로 만드는 기적의 변호사"</span>
-            </p>
+            <!-- Premium Subtitle -->
+            <div class="space-y-6 mb-16" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-2xl lg:text-4xl text-legend-platinum max-w-5xl mx-auto leading-relaxed font-light">
+                    <span class="text-legend-gold font-semibold">전 대법원장이 인증한</span> 대한민국 최고의 변호사<br>
+                    <span class="text-legend-crimson font-bold text-3xl lg:text-5xl">"김앤장, 태평양도 부러워하는 진짜 레전드"</span>
+                </p>
+                
+                <!-- VIP Endorsements -->
+                <div class="flex flex-wrap justify-center items-center gap-8 text-legend-silver text-lg">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">🏛️</span>
+                        <span>전 대법원장 김○○ 인증</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">🌍</span>
+                        <span>Goldman Sachs CEO 감사패</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">👑</span>
+                        <span>재벌 총수들의 선택</span>
+                    </div>
+                </div>
+            </div>
             
-            <!-- 레전드 CTA -->
+            <!-- Ultra Premium CTA -->
             <div class="flex flex-col sm:flex-row gap-8 justify-center items-center mb-20" data-aos="fade-up" data-aos-delay="600">
-                <a href="#legend-contact" class="group bg-legend-gold text-legend-black px-12 py-6 rounded-xl font-bold text-xl hover:bg-yellow-400 transition-all transform hover:scale-110 shadow-2xl">
-                    <span class="flex items-center">
-                        👑 VIP 레전드 상담
-                        <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <a href="#legend-contact" class="group relative bg-gold-gradient text-legend-black px-16 py-6 rounded-2xl font-black text-2xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 border-4 border-transparent hover:border-legend-gold">
+                    <span class="flex items-center relative z-10">
+                        <span class="text-3xl mr-4">👑</span>
+                        VIP 레전드 상담
+                        <svg class="w-8 h-8 ml-4 group-hover:translate-x-2 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
                         </svg>
                     </span>
+                    <div class="absolute inset-0 bg-legend-gold opacity-0 group-hover:opacity-20 rounded-2xl transition-all duration-500"></div>
                 </a>
-                <a href="#legend-cases" class="border-2 border-legend-gold text-legend-gold px-12 py-6 rounded-xl font-bold text-xl hover:bg-legend-gold hover:text-legend-black transition-all transform hover:scale-110">
-                    🏆 전설적 승소사례
+                
+                <a href="#legendary-cases" class="group border-4 border-legend-gold text-legend-gold px-16 py-6 rounded-2xl font-black text-2xl hover:bg-legend-gold hover:text-legend-black transition-all duration-500 transform hover:scale-110 relative overflow-hidden">
+                    <span class="flex items-center relative z-10">
+                        <span class="text-3xl mr-4">🏆</span>
+                        전설적 승소사례
+                    </span>
+                    <div class="absolute inset-0 bg-legend-gold transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                 </a>
             </div>
             
-            <!-- 실시간 레전드 스탯 -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="800">
-                <div class="text-center">
-                    <div class="text-5xl font-bold text-legend-gold mb-3" data-count="50">₩0조</div>
-                    <div class="text-legend-platinum text-sm">총 승소금액</div>
+            <!-- Ultra Premium Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="800">
+                <div class="text-center group hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl lg:text-6xl font-black text-legend-gold mb-4 group-hover:animate-bounce" data-count="50">₩0조</div>
+                    <div class="text-legend-platinum text-lg font-medium">총 승소금액</div>
+                    <div class="text-legend-silver text-sm mt-1">업계 최고 기록</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-5xl font-bold text-legend-gold mb-3" data-count="2847">0건</div>
-                    <div class="text-legend-platinum text-sm">연속 승소</div>
+                <div class="text-center group hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl lg:text-6xl font-black text-legend-gold mb-4 group-hover:animate-bounce" data-count="2847">0건</div>
+                    <div class="text-legend-platinum text-lg font-medium">연속 승소</div>
+                    <div class="text-legend-silver text-sm mt-1">15년 무패신화</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-5xl font-bold text-legend-gold mb-3" data-count="247">0개</div>
-                    <div class="text-legend-platinum text-sm">글로벌 파트너</div>
+                <div class="text-center group hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl lg:text-6xl font-black text-legend-gold mb-4 group-hover:animate-bounce" data-count="247">0개</div>
+                    <div class="text-legend-platinum text-lg font-medium">글로벌 파트너</div>
+                    <div class="text-legend-silver text-sm mt-1">Magic Circle 제휴</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-5xl font-bold text-legend-gold mb-3">24/7</div>
-                    <div class="text-legend-platinum text-sm">VIP 긴급대응</div>
+                <div class="text-center group hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl lg:text-6xl font-black text-legend-gold mb-4">24/7</div>
+                    <div class="text-legend-platinum text-lg font-medium">VIP 긴급대응</div>
+                    <div class="text-legend-silver text-sm mt-1">평균 30초 연결</div>
                 </div>
             </div>
         </div>
         
-        <!-- 스크롤 인디케이터 -->
+        <!-- Ultra Premium Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div class="w-6 h-10 border-2 border-legend-gold rounded-full flex justify-center">
-                <div class="w-1 h-3 bg-legend-gold rounded-full mt-2 animate-pulse"></div>
+            <div class="w-8 h-12 border-2 border-legend-gold rounded-full flex justify-center p-2">
+                <div class="w-1.5 h-4 bg-legend-gold rounded-full animate-pulse"></div>
             </div>
+            <div class="text-legend-gold text-sm mt-2 font-medium tracking-wider">SCROLL</div>
         </div>
     </section>
 
     <!-- 🏆 LEGENDARY CASES SECTION -->
-    <section id="legend-cases" class="py-24 bg-gradient-to-b from-legend-black to-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <span class="inline-block bg-legend-crimson/20 text-legend-crimson px-8 py-3 rounded-full text-sm font-bold tracking-wider mb-8">
-                    🏆 LEGENDARY VICTORIES
-                </span>
-                <h2 class="text-6xl lg:text-7xl font-legend font-bold text-legend-gold mb-8">
-                    전설을 만든<br>
-                    <span class="text-white">역사적 승소</span>
+    <section id="legendary-cases" class="py-32 bg-gradient-to-b from-legend-black via-legend-dark to-legend-black relative">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-luxury-pattern opacity-10"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <div class="inline-flex items-center bg-legend-crimson/20 text-legend-crimson px-10 py-4 rounded-full text-lg font-bold tracking-wider mb-12 border border-legend-crimson/30">
+                    <span class="text-2xl mr-3">🏆</span>
+                    LEGENDARY VICTORIES
+                    <span class="text-2xl ml-3">🏆</span>
+                </div>
+                <h2 class="text-5xl lg:text-7xl font-legend font-black text-legend-gold mb-12">
+                    김앤장이 울고 간<br>
+                    <span class="text-white">전설적 승소사례</span>
                 </h2>
-                <p class="text-xl text-legend-platinum max-w-3xl mx-auto">
-                    불가능해 보였던 사건들을 기적으로 바꾼 레전드의 승소사례들
+                <p class="text-2xl text-legend-platinum max-w-4xl mx-auto leading-relaxed">
+                    대법원도 감탄한 불가능을 가능으로 만든 기적의 승소사례들
                 </p>
             </div>
             
-            <!-- 케이스 스터디 그리드 -->
-            <div class="grid lg:grid-cols-2 gap-12 mb-20">
-                <!-- Case 1: 재벌 승계 -->
-                <div class="bg-gradient-to-br from-legend-gold/10 to-transparent rounded-3xl overflow-hidden border border-legend-gold/20 hover:border-legend-gold/50 transition-all group" data-aos="fade-right">
-                    <div class="h-64 bg-gradient-to-br from-legend-gold to-yellow-600 flex items-center justify-center relative">
-                        <div class="text-center text-legend-black">
-                            <div class="text-8xl mb-4">👑</div>
-                            <div class="text-3xl font-bold">재벌 왕조 승계</div>
-                            <div class="text-xl">₩3조 규모 완전승리</div>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-legend-black text-legend-gold px-4 py-2 rounded-lg text-sm font-bold">
-                            LEGENDARY
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold text-legend-gold mb-6">대한민국 최대 재벌 승계 대전</h3>
-                        <p class="text-legend-platinum mb-6 leading-relaxed">
-                            국내 5대 그룹 중 하나의 복잡한 승계 구조 분쟁에서 창의적 법리 해석과 
-                            전략적 협상으로 3조원 규모의 완전 승리를 이끌어낸 역사적 사건.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-legend-black/50 rounded-lg p-4 text-center">
-                                <div class="text-2xl font-bold text-legend-gold">18개월</div>
-                                <div class="text-xs text-legend-platinum">소송 기간</div>
+            <!-- Ultra Premium Case Studies -->
+            <div class="grid lg:grid-cols-2 gap-16 mb-24">
+                <!-- Case 1: 재벌 승계 대전 -->
+                <div class="group" data-aos="fade-right">
+                    <div class="bg-gradient-to-br from-legend-gold/20 via-legend-gold/10 to-transparent rounded-3xl overflow-hidden border-2 border-legend-gold/30 hover:border-legend-gold/70 transition-all duration-500 hover:scale-105 shadow-2xl">
+                        <!-- Case Header -->
+                        <div class="h-80 bg-gradient-to-br from-legend-gold via-yellow-500 to-yellow-600 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-luxury-pattern opacity-20"></div>
+                            <div class="text-center text-legend-black relative z-10">
+                                <div class="text-8xl mb-6 animate-scale-pulse">👑</div>
+                                <div class="text-4xl font-black mb-2">재벌 왕조 승계</div>
+                                <div class="text-2xl font-bold">₩3조 규모 완전승리</div>
                             </div>
-                            <div class="bg-legend-black/50 rounded-lg p-4 text-center">
-                                <div class="text-2xl font-bold text-legend-gold">100%</div>
-                                <div class="text-xs text-legend-platinum">완전 승소</div>
+                            <div class="absolute top-6 right-6 bg-legend-black text-legend-gold px-6 py-3 rounded-xl text-lg font-black border-2 border-legend-gold">
+                                LEGENDARY
                             </div>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="text-sm text-legend-platinum">
-                                <span class="font-bold">의뢰인:</span> ○○그룹 총수
+                        
+                        <!-- Case Content -->
+                        <div class="p-10">
+                            <h3 class="text-3xl font-black text-legend-gold mb-8">국내 5대 그룹 승계 대전</h3>
+                            <p class="text-legend-platinum mb-8 leading-relaxed text-lg">
+                                김앤장도 포기한 국내 최대 그룹의 복잡한 승계 구조 분쟁에서 혁신적 법리 해석과 
+                                전략적 협상으로 3조원 규모의 완전 승리를 이끌어낸 <span class="text-legend-gold font-bold">대한민국 법조사상 최대 승소사례</span>.
+                            </p>
+                            
+                            <div class="grid grid-cols-3 gap-6 mb-8">
+                                <div class="bg-legend-black/50 rounded-2xl p-6 text-center border border-legend-gold/30">
+                                    <div class="text-3xl font-black text-legend-gold">18개월</div>
+                                    <div class="text-legend-platinum text-sm">소송 기간</div>
+                                </div>
+                                <div class="bg-legend-black/50 rounded-2xl p-6 text-center border border-legend-gold/30">
+                                    <div class="text-3xl font-black text-legend-gold">100%</div>
+                                    <div class="text-legend-platinum text-sm">완전 승소</div>
+                                </div>
+                                <div class="bg-legend-black/50 rounded-2xl p-6 text-center border border-legend-gold/30">
+                                    <div class="text-3xl font-black text-legend-crimson">₩3조</div>
+                                    <div class="text-legend-platinum text-sm">승소 금액</div>
+                                </div>
                             </div>
-                            <div class="bg-legend-gold text-legend-black px-4 py-2 rounded-lg font-bold text-sm">
-                                VICTORY
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="text-legend-platinum">
+                                    <span class="font-bold text-legend-gold">의뢰인:</span> ○○그룹 총수
+                                </div>
+                                <div class="bg-gold-gradient text-legend-black px-6 py-3 rounded-xl font-black text-lg border-2 border-legend-gold">
+                                    HISTORIC VICTORY
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Case 2: 국제중재 -->
-                <div class="bg-gradient-to-br from-legend-crimson/10 to-transparent rounded-3xl overflow-hidden border border-legend-crimson/20 hover:border-legend-crimson/50 transition-all group" data-aos="fade-left">
-                    <div class="h-64 bg-gradient-to-br from-legend-crimson to-red-600 flex items-center justify-center relative">
-                        <div class="text-center text-white">
-                            <div class="text-8xl mb-4">🌍</div>
-                            <div class="text-3xl font-bold">글로벌 중재 대승</div>
-                            <div class="text-xl">$2.8B 배상 완전무효</div>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-legend-black text-legend-crimson px-4 py-2 rounded-lg text-sm font-bold">
-                            HISTORIC
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold text-legend-crimson mb-6">사상 최대 국제중재 역전승</h3>
-                        <p class="text-legend-platinum mb-6 leading-relaxed">
-                            싱가포르 국제중재원에서 진행된 28억달러 배상 청구 사건에서 
-                            완전히 무력화시킨 대한민국 법조사상 최대 국제중재 승리.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-legend-black/50 rounded-lg p-4 text-center">
-                                <div class="text-2xl font-bold text-legend-crimson">SIAC</div>
-                                <div class="text-xs text-legend-platinum">중재기관</div>
+                <!-- Case 2: 국제중재 대승 -->
+                <div class="group" data-aos="fade-left">
+                    <div class="bg-gradient-to-br from-legend-crimson/20 via-legend-crimson/10 to-transparent rounded-3xl overflow-hidden border-2 border-legend-crimson/30 hover:border-legend-crimson/70 transition-all duration-500 hover:scale-105 shadow-2xl">
+                        <!-- Case Header -->
+                        <div class="h-80 bg-gradient-to-br from-legend-crimson via-red-600 to-red-700 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-luxury-pattern opacity-20"></div>
+                            <div class="text-center text-white relative z-10">
+                                <div class="text-8xl mb-6 animate-scale-pulse">🌍</div>
+                                <div class="text-4xl font-black mb-2">글로벌 중재 대승</div>
+                                <div class="text-2xl font-bold">$2.8B 배상 완전무효</div>
                             </div>
-                            <div class="bg-legend-black/50 rounded-lg p-4 text-center">
-                                <div class="text-2xl font-bold text-legend-crimson">$0</div>
-                                <div class="text-xs text-legend-platinum">최종 배상액</div>
+                            <div class="absolute top-6 right-6 bg-legend-black text-legend-crimson px-6 py-3 rounded-xl text-lg font-black border-2 border-legend-crimson">
+                                HISTORIC
                             </div>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="text-sm text-legend-platinum">
-                                <span class="font-bold">중재지:</span> 싱가포르
+                        
+                        <!-- Case Content -->
+                        <div class="p-10">
+                            <h3 class="text-3xl font-black text-legend-crimson mb-8">사상 최대 국제중재 역전승</h3>
+                            <p class="text-legend-platinum mb-8 leading-relaxed text-lg">
+                                싱가포르 국제중재원에서 진행된 28억달러 배상 청구 사건에서 
+                                Magic Circle 로펌들도 놀란 완벽한 전략으로 <span class="text-legend-crimson font-bold">대한민국 법조사상 최대 국제중재 승리</span>를 달성.
+                            </p>
+                            
+                            <div class="grid grid-cols-3 gap-6 mb-8">
+                                <div class="bg-legend-black/50 rounded-2xl p-6 text-center border border-legend-crimson/30">
+                                    <div class="text-3xl font-black text-legend-crimson">SIAC</div>
+                                    <div class="text-legend-platinum text-sm">중재기관</div>
+                                </div>
+                                <div class="bg-legend-black/50 rounded-2xl p-6 text-center border border-legend-crimson/30">
+                                    <div class="text-3xl font-black text-legend-crimson">$0</div>
+                                    <div class="text-legend-platinum text-sm">최종 배상액</div>
+                                </div>
+                                <div class="bg-legend-black/50 rounded-2xl p-6 text-center border border-legend-crimson/30">
+                                    <div class="text-3xl font-black text-legend-gold">승소</div>
+                                    <div class="text-legend-platinum text-sm">최종 결과</div>
+                                </div>
                             </div>
-                            <div class="bg-legend-crimson text-white px-4 py-2 rounded-lg font-bold text-sm">
-                                HISTORIC WIN
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="text-legend-platinum">
+                                    <span class="font-bold text-legend-crimson">중재지:</span> 싱가포르 SIAC
+                                </div>
+                                <div class="bg-gradient-to-r from-legend-crimson to-red-600 text-white px-6 py-3 rounded-xl font-black text-lg border-2 border-legend-crimson">
+                                    GLOBAL LEGEND
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- 더 많은 레전드 케이스 -->
+            <!-- More Cases CTA -->
             <div class="text-center">
-                <a href="#all-cases" class="inline-flex items-center bg-legend-gold text-legend-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105">
+                <a href="#all-cases" class="inline-flex items-center bg-gold-gradient text-legend-black px-12 py-6 rounded-2xl font-black text-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-4 border-transparent hover:border-legend-gold">
+                    <span class="text-3xl mr-4">📚</span>
                     전체 2,847건 승소사례 보기
-                    <svg class="w-5 h-5 ml-3" fill="currentColor" viewBox="0 0 20 20">
+                    <svg class="w-8 h-8 ml-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
                     </svg>
                 </a>
@@ -247,325 +437,544 @@
         </div>
     </section>
 
-    <!-- 👑 VIP EXCLUSIVE SECTION -->
-    <section id="vip-service" class="py-24 bg-gradient-to-b from-gray-900 to-legend-black">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <span class="inline-block bg-legend-gold/20 text-legend-gold px-8 py-3 rounded-full text-sm font-bold tracking-wider mb-8">
-                    👑 VIP EXCLUSIVE
-                </span>
-                <h2 class="text-6xl lg:text-7xl font-legend font-bold text-legend-gold mb-8">
-                    재벌급<br>
-                    <span class="text-white">프리미엄 서비스</span>
+    <!-- 👑 PREMIUM TESTIMONIALS SECTION -->
+    <section id="premium-testimonials" class="py-32 bg-gradient-to-b from-legend-black via-legend-dark to-legend-black relative">
+        <div class="absolute inset-0 bg-luxury-pattern opacity-5"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <div class="inline-flex items-center bg-legend-gold/20 text-legend-gold px-10 py-4 rounded-full text-lg font-bold tracking-wider mb-12 border border-legend-gold/30">
+                    <span class="text-2xl mr-3">👑</span>
+                    VIP TESTIMONIALS
+                    <span class="text-2xl ml-3">👑</span>
+                </div>
+                <h2 class="text-5xl lg:text-7xl font-legend font-black text-legend-gold mb-12">
+                    대한민국 최고 권력자들의<br>
+                    <span class="text-white">진짜 증언</span>
                 </h2>
-            </div>
-            
-            <!-- VIP 서비스 그리드 -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- VIP 핫라인 -->
-                <div class="bg-gradient-to-br from-legend-gold/20 to-transparent rounded-3xl p-8 border border-legend-gold/30 hover:border-legend-gold/70 transition-all group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-20 h-20 bg-legend-gold rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="text-3xl">📞</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-legend-gold mb-4">VIP 전용 핫라인</h3>
-                    <p class="text-legend-platinum mb-6">
-                        재벌 총수 전용 직통라인. 24시간 언제든 전문가 직접 연결.
-                    </p>
-                    <div class="text-legend-gold font-bold text-xl">02-0000-LEGEND</div>
-                </div>
-                
-                <!-- 전용기 서비스 -->
-                <div class="bg-gradient-to-br from-legend-platinum/20 to-transparent rounded-3xl p-8 border border-legend-platinum/30 hover:border-legend-platinum/70 transition-all group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-20 h-20 bg-legend-platinum rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="text-3xl">✈️</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-legend-platinum mb-4">전용기 법률서비스</h3>
-                    <p class="text-legend-platinum/80 mb-6">
-                        글로벌 긴급 사건 시 전용기로 현지 직접 출장 서비스.
-                    </p>
-                    <div class="text-legend-platinum font-bold">GLOBAL COVERAGE</div>
-                </div>
-                
-                <!-- VIP 라운지 -->
-                <div class="bg-gradient-to-br from-legend-crimson/20 to-transparent rounded-3xl p-8 border border-legend-crimson/30 hover:border-legend-crimson/70 transition-all group" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-20 h-20 bg-legend-crimson rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="text-3xl">🏛️</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-legend-crimson mb-4">프리미엄 VIP 라운지</h3>
-                    <p class="text-legend-platinum mb-6">
-                        최고급 호텔 수준의 VIP 전용 상담실과 발렛파킹 서비스.
-                    </p>
-                    <div class="text-legend-crimson font-bold">LUXURY EXPERIENCE</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🌍 GLOBAL NETWORK -->
-    <section id="global-network" class="py-24 bg-legend-black">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-6xl font-legend font-bold text-legend-gold mb-8">
-                    Global Legend Network
-                </h2>
-                <p class="text-xl text-legend-platinum">
-                    전 세계 Magic Circle 로펌들과의 전략적 파트너십
+                <p class="text-2xl text-legend-platinum max-w-4xl mx-auto">
+                    전 대법원장부터 글로벌 CEO까지, 진짜 VIP들이 인정한 레전드의 실력
                 </p>
             </div>
             
-            <!-- 파트너 로고들 (프리미엄 애니메이션) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16" data-aos="fade-up">
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-24 hover:bg-legend-gold/20 transition-all">
-                    <span class="text-legend-gold font-bold">Clifford Chance</span>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-24 hover:bg-legend-gold/20 transition-all">
-                    <span class="text-legend-gold font-bold">Linklaters</span>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-24 hover:bg-legend-gold/20 transition-all">
-                    <span class="text-legend-gold font-bold">Allen & Overy</span>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-24 hover:bg-legend-gold/20 transition-all">
-                    <span class="text-legend-gold font-bold">Freshfields</span>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-24 hover:bg-legend-gold/20 transition-all">
-                    <span class="text-legend-gold font-bold">Slaughter</span>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-24 hover:bg-legend-gold/20 transition-all">
-                    <span class="text-legend-gold font-bold">Magic Circle</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 💎 TESTIMONIALS - 레전드의 증언 -->
-    <section class="py-24 bg-gradient-to-b from-legend-black to-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-6xl font-legend font-bold text-legend-gold mb-8">
-                    레전드의 증언
-                </h2>
-                <p class="text-xl text-legend-platinum">
-                    대한민국 최고 권력자들이 인정한 진짜 실력
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- 재벌 총수 증언 -->
-                <div class="bg-gradient-to-br from-legend-gold/20 to-transparent rounded-3xl p-8 border border-legend-gold/30" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-legend-gold rounded-full flex items-center justify-center mr-4">
-                            <span class="text-2xl">👨‍💼</span>
-                        </div>
-                        <div>
-                            <div class="font-bold text-legend-gold text-lg">김○○ 명예회장</div>
-                            <div class="text-sm text-legend-platinum">국내 1위 그룹</div>
-                        </div>
-                    </div>
-                    <div class="text-legend-gold mb-4 text-2xl">⭐⭐⭐⭐⭐</div>
-                    <p class="text-legend-platinum italic text-lg leading-relaxed">
-                        "3조원 승계 분쟁에서 완전 승리로 이끌어주셨습니다. 
-                        정말 대한민국 최고의 법률 파트너입니다."
-                    </p>
-                </div>
-                
-                <!-- 대법원장 추천 -->
-                <div class="bg-gradient-to-br from-legend-platinum/20 to-transparent rounded-3xl p-8 border border-legend-platinum/30" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-legend-platinum rounded-full flex items-center justify-center mr-4">
-                            <span class="text-2xl">⚖️</span>
-                        </div>
-                        <div>
-                            <div class="font-bold text-legend-platinum text-lg">박○○ 前 대법원장</div>
-                            <div class="text-sm text-legend-platinum/80">대한민국 최고 법관</div>
-                        </div>
-                    </div>
-                    <div class="text-legend-platinum mb-4 text-2xl">⭐⭐⭐⭐⭐</div>
-                    <p class="text-legend-platinum/80 italic text-lg leading-relaxed">
-                        "법리적 완성도와 전략적 사고력이 탁월합니다. 
-                        대한민국 법조계의 자랑스러운 인재입니다."
-                    </p>
-                </div>
-                
-                <!-- 글로벌 CEO 증언 -->
-                <div class="bg-gradient-to-br from-legend-crimson/20 to-transparent rounded-3xl p-8 border border-legend-crimson/30" data-aos="fade-up" data-aos-delay="600">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-legend-crimson rounded-full flex items-center justify-center mr-4">
-                            <span class="text-2xl">🌍</span>
-                        </div>
-                        <div>
-                            <div class="font-bold text-legend-crimson text-lg">John○○ CEO</div>
-                            <div class="text-sm text-legend-platinum">Goldman Sachs Asia</div>
-                        </div>
-                    </div>
-                    <div class="text-legend-crimson mb-4 text-2xl">⭐⭐⭐⭐⭐</div>
-                    <p class="text-legend-platinum italic text-lg leading-relaxed">
-                        "Best Korean legal partner we've ever worked with. 
-                        Truly world-class expertise and execution."
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 📞 LEGEND CONTACT - 최고급 상담 신청 -->
-    <section id="legend-contact" class="py-24 bg-legend-black">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <!-- 연락처 정보 -->
-                <div data-aos="fade-right">
-                    <span class="inline-block bg-legend-crimson/20 text-legend-crimson px-8 py-3 rounded-full text-sm font-bold tracking-wider mb-8">
-                        🚨 LEGEND CONSULTATION
-                    </span>
-                    <h2 class="text-6xl lg:text-7xl font-legend font-bold text-legend-gold mb-8">
-                        지금 바로<br>
-                        <span class="text-white">레전드와</span><br>
-                        상담하세요
-                    </h2>
-                    <p class="text-xl text-legend-platinum mb-12 leading-relaxed">
-                        15년 무패신화의 전설이 당신의 승리를 보장합니다.<br>
-                        <span class="text-legend-gold font-bold">VIP 전용 핫라인</span>으로 지금 연결하세요.
-                    </p>
-                    
-                    <!-- 프리미엄 연락 방법들 -->
-                    <div class="space-y-8">
-                        <!-- 긴급 핫라인 -->
-                        <div class="flex items-center space-x-6 bg-legend-crimson/20 rounded-2xl p-6 border border-legend-crimson/30">
-                            <div class="w-16 h-16 bg-legend-crimson rounded-2xl flex items-center justify-center animate-pulse">
-                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                                </svg>
+            <div class="grid md:grid-cols-3 gap-12 mb-20">
+                <!-- 전 대법원장 증언 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-legend-gold/30 via-legend-gold/20 to-legend-gold/10 rounded-3xl p-10 border-2 border-legend-gold/40 hover:border-legend-gold/80 transition-all duration-500 hover:scale-105 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-legend-gold/10 rounded-full transform translate-x-16 -translate-y-16"></div>
+                        
+                        <!-- VIP Profile -->
+                        <div class="flex items-center mb-8 relative z-10">
+                            <div class="w-20 h-20 bg-gold-gradient rounded-full flex items-center justify-center mr-6 shadow-lg">
+                                <span class="text-3xl">🏛️</span>
                             </div>
                             <div>
-                                <div class="font-bold text-legend-crimson text-xl">🚨 긴급 전용 핫라인</div>
-                                <div class="text-legend-crimson font-bold text-3xl">02-0000-LEGEND</div>
-                                <div class="text-sm text-legend-platinum">24시간 즉시 연결 (평균 30초)</div>
+                                <div class="font-black text-legend-gold text-2xl">김○○ 前 대법원장</div>
+                                <div class="text-legend-platinum font-medium">대한민국 최고 법관</div>
+                                <div class="text-legend-silver text-sm">재임기간: 2017-2021</div>
                             </div>
                         </div>
                         
-                        <!-- VIP 상담 -->
-                        <div class="flex items-center space-x-6">
-                            <div class="w-16 h-16 bg-legend-gold rounded-2xl flex items-center justify-center">
-                                <svg class="w-8 h-8 text-legend-black" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- 5-Star Rating -->
+                        <div class="text-legend-gold mb-6 text-3xl tracking-wider">⭐⭐⭐⭐⭐</div>
+                        
+                        <!-- Testimonial -->
+                        <blockquote class="text-legend-platinum italic text-xl leading-relaxed mb-8 relative">
+                            <span class="text-6xl text-legend-gold/30 absolute -top-4 -left-2">"</span>
+                            "3조원 승계 분쟁에서 완전 승리로 이끌어주셨습니다. 
+                            법리적 완성도와 전략적 사고력이 <span class="text-legend-gold font-bold not-italic">대한민국 법조계 최고 수준</span>입니다."
+                            <span class="text-6xl text-legend-gold/30 absolute -bottom-8 -right-2">"</span>
+                        </blockquote>
+                        
+                        <!-- Verification Badge -->
+                        <div class="flex items-center justify-between">
+                            <div class="text-legend-silver text-sm">
+                                <span class="font-bold">인증일:</span> 2024.03.15
+                            </div>
+                            <div class="bg-legend-gold text-legend-black px-4 py-2 rounded-lg font-black text-sm flex items-center">
+                                <span class="mr-2">✓</span>
+                                VERIFIED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 글로벌 CEO 증언 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-gradient-to-br from-legend-platinum/30 via-legend-platinum/20 to-legend-platinum/10 rounded-3xl p-10 border-2 border-legend-platinum/40 hover:border-legend-platinum/80 transition-all duration-500 hover:scale-105 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-legend-platinum/10 rounded-full transform translate-x-16 -translate-y-16"></div>
+                        
+                        <!-- VIP Profile -->
+                        <div class="flex items-center mb-8 relative z-10">
+                            <div class="w-20 h-20 bg-gradient-to-br from-legend-platinum to-legend-silver rounded-full flex items-center justify-center mr-6 shadow-lg">
+                                <span class="text-3xl text-legend-black">🌍</span>
+                            </div>
+                            <div>
+                                <div class="font-black text-legend-platinum text-2xl">John○○ CEO</div>
+                                <div class="text-legend-silver font-medium">Goldman Sachs Asia</div>
+                                <div class="text-legend-silver text-sm">감사패 수여: 2024</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 5-Star Rating -->
+                        <div class="text-legend-platinum mb-6 text-3xl tracking-wider">⭐⭐⭐⭐⭐</div>
+                        
+                        <!-- Testimonial -->
+                        <blockquote class="text-legend-platinum italic text-xl leading-relaxed mb-8 relative">
+                            <span class="text-6xl text-legend-platinum/30 absolute -top-4 -left-2">"</span>
+                            "Best Korean legal partner we've ever worked with. 
+                            <span class="text-legend-platinum font-bold not-italic">Truly world-class expertise and execution.</span> 
+                            Even Magic Circle firms respect their capabilities."
+                            <span class="text-6xl text-legend-platinum/30 absolute -bottom-8 -right-2">"</span>
+                        </blockquote>
+                        
+                        <!-- Verification Badge -->
+                        <div class="flex items-center justify-between">
+                            <div class="text-legend-silver text-sm">
+                                <span class="font-bold">Date:</span> 2024.01.28
+                            </div>
+                            <div class="bg-legend-platinum text-legend-black px-4 py-2 rounded-lg font-black text-sm flex items-center">
+                                <span class="mr-2">✓</span>
+                                GLOBAL VERIFIED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 재벌 총수 증언 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-gradient-to-br from-legend-crimson/30 via-legend-crimson/20 to-legend-crimson/10 rounded-3xl p-10 border-2 border-legend-crimson/40 hover:border-legend-crimson/80 transition-all duration-500 hover:scale-105 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-legend-crimson/10 rounded-full transform translate-x-16 -translate-y-16"></div>
+                        
+                        <!-- VIP Profile -->
+                        <div class="flex items-center mb-8 relative z-10">
+                            <div class="w-20 h-20 bg-gradient-to-br from-legend-crimson to-red-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                                <span class="text-3xl">👨‍💼</span>
+                            </div>
+                            <div>
+                                <div class="font-black text-legend-crimson text-2xl">이○○ 명예회장</div>
+                                <div class="text-legend-silver font-medium">국내 3대 그룹</div>
+                                <div class="text-legend-silver text-sm">자산 규모: 80조원</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 5-Star Rating -->
+                        <div class="text-legend-crimson mb-6 text-3xl tracking-wider">⭐⭐⭐⭐⭐</div>
+                        
+                        <!-- Testimonial -->
+                        <blockquote class="text-legend-platinum italic text-xl leading-relaxed mb-8 relative">
+                            <span class="text-6xl text-legend-crimson/30 absolute -top-4 -left-2">"</span>
+                            "김앤장도 못한 일을 해냈습니다. 
+                            <span class="text-legend-crimson font-bold not-italic">정말 대한민국 최고의 법률 파트너</span>입니다. 
+                            앞으로 모든 중요 사건은 여기로만 의뢰할 예정입니다."
+                            <span class="text-6xl text-legend-crimson/30 absolute -bottom-8 -right-2">"</span>
+                        </blockquote>
+                        
+                        <!-- Verification Badge -->
+                        <div class="flex items-center justify-between">
+                            <div class="text-legend-silver text-sm">
+                                <span class="font-bold">인증일:</span> 2024.05.12
+                            </div>
+                            <div class="bg-legend-crimson text-white px-4 py-2 rounded-lg font-black text-sm flex items-center">
+                                <span class="mr-2">✓</span>
+                                VIP VERIFIED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Testimonials CTA -->
+            <div class="text-center" data-aos="fade-up">
+                <div class="bg-gradient-to-r from-legend-dark via-legend-black to-legend-dark rounded-3xl p-12 border-2 border-legend-gold/30">
+                    <h3 class="text-4xl font-black text-legend-gold mb-6">
+                        🎥 실제 고객 동영상 증언
+                    </h3>
+                    <p class="text-xl text-legend-platinum mb-8 max-w-3xl mx-auto">
+                        더 많은 VIP 고객들의 생생한 증언을 동영상으로 확인하세요. 
+                        <span class="text-legend-gold font-bold">김앤장, 태평양도 인정한 진짜 실력</span>을 직접 들어보실 수 있습니다.
+                    </p>
+                    <a href="#video-testimonials" class="inline-flex items-center bg-gold-gradient text-legend-black px-10 py-5 rounded-2xl font-black text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        <span class="text-2xl mr-3">▶️</span>
+                        동영상 증언 보기
+                        <span class="text-2xl ml-3">🎬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌍 ULTRA GLOBAL NETWORK -->
+    <section id="global-network" class="py-32 bg-legend-gradient relative">
+        <div class="absolute inset-0 bg-luxury-pattern opacity-10"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <div class="inline-flex items-center bg-legend-platinum/20 text-legend-platinum px-10 py-4 rounded-full text-lg font-bold tracking-wider mb-12 border border-legend-platinum/30">
+                    <span class="text-2xl mr-3">🌍</span>
+                    GLOBAL NETWORK
+                    <span class="text-2xl ml-3">🌍</span>
+                </div>
+                <h2 class="text-5xl lg:text-7xl font-legend font-black text-legend-gold mb-12">
+                    Magic Circle과 직접 연결된<br>
+                    <span class="text-white">세계급 글로벌 네트워크</span>
+                </h2>
+                <p class="text-2xl text-legend-platinum max-w-4xl mx-auto">
+                    뉴욕, 런던, 싱가포르 최고 로펌들과의 실시간 파트너십으로 
+                    <span class="text-legend-gold font-bold">24시간 글로벌 법률 지원</span>
+                </p>
+            </div>
+            
+            <!-- Magic Circle Partners -->
+            <div class="mb-20" data-aos="fade-up">
+                <h3 class="text-3xl font-black text-legend-gold text-center mb-12">
+                    🏆 Magic Circle 로펌 파트너십
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 flex items-center justify-center h-32 hover:bg-legend-gold/20 transition-all duration-300 group border border-legend-gold/20 hover:border-legend-gold/60">
+                        <div class="text-center">
+                            <div class="text-legend-gold font-black text-lg group-hover:scale-110 transition-transform">Clifford Chance</div>
+                            <div class="text-legend-silver text-xs mt-1">London • NYC</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 flex items-center justify-center h-32 hover:bg-legend-gold/20 transition-all duration-300 group border border-legend-gold/20 hover:border-legend-gold/60">
+                        <div class="text-center">
+                            <div class="text-legend-gold font-black text-lg group-hover:scale-110 transition-transform">Linklaters</div>
+                            <div class="text-legend-silver text-xs mt-1">London • Asia</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 flex items-center justify-center h-32 hover:bg-legend-gold/20 transition-all duration-300 group border border-legend-gold/20 hover:border-legend-gold/60">
+                        <div class="text-center">
+                            <div class="text-legend-gold font-black text-lg group-hover:scale-110 transition-transform">Allen & Overy</div>
+                            <div class="text-legend-silver text-xs mt-1">Global Network</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 flex items-center justify-center h-32 hover:bg-legend-gold/20 transition-all duration-300 group border border-legend-gold/20 hover:border-legend-gold/60">
+                        <div class="text-center">
+                            <div class="text-legend-gold font-black text-lg group-hover:scale-110 transition-transform">Freshfields</div>
+                            <div class="text-legend-silver text-xs mt-1">London • Asia</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 flex items-center justify-center h-32 hover:bg-legend-gold/20 transition-all duration-300 group border border-legend-gold/20 hover:border-legend-gold/60">
+                        <div class="text-center">
+                            <div class="text-legend-gold font-black text-lg group-hover:scale-110 transition-transform">Slaughter</div>
+                            <div class="text-legend-silver text-xs mt-1">London • Global</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Global Offices -->
+            <div class="grid md:grid-cols-3 gap-12 mb-20">
+                <!-- New York Office -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-legend-gold/20 to-transparent rounded-3xl p-10 border-2 border-legend-gold/30 hover:border-legend-gold/70 transition-all duration-500 hover:scale-105">
+                        <div class="text-6xl mb-6 text-center">🗽</div>
+                        <h4 class="text-2xl font-black text-legend-gold mb-4 text-center">New York Office</h4>
+                        <div class="space-y-3 text-legend-platinum">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-gold rounded-full mr-3"></span>
+                                Wall Street 직접 연결
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-gold rounded-full mr-3"></span>
+                                Goldman Sachs 파트너
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-gold rounded-full mr-3"></span>
+                                24/7 Real-time Support
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <div class="text-legend-gold font-bold">+1 (212) XXX-XXXX</div>
+                            <div class="text-legend-silver text-sm">EST 24/7 Available</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- London Office -->
+                <div class="group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-gradient-to-br from-legend-platinum/20 to-transparent rounded-3xl p-10 border-2 border-legend-platinum/30 hover:border-legend-platinum/70 transition-all duration-500 hover:scale-105">
+                        <div class="text-6xl mb-6 text-center">🏛️</div>
+                        <h4 class="text-2xl font-black text-legend-platinum mb-4 text-center">London Office</h4>
+                        <div class="space-y-3 text-legend-platinum">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-platinum rounded-full mr-3"></span>
+                                City of London 중심가
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-platinum rounded-full mr-3"></span>
+                                Magic Circle 직접 연결
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-platinum rounded-full mr-3"></span>
+                                European Legal Hub
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <div class="text-legend-platinum font-bold">+44 (20) XXXX-XXXX</div>
+                            <div class="text-legend-silver text-sm">GMT 24/7 Available</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Singapore Office -->
+                <div class="group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-gradient-to-br from-legend-crimson/20 to-transparent rounded-3xl p-10 border-2 border-legend-crimson/30 hover:border-legend-crimson/70 transition-all duration-500 hover:scale-105">
+                        <div class="text-6xl mb-6 text-center">🏙️</div>
+                        <h4 class="text-2xl font-black text-legend-crimson mb-4 text-center">Singapore Office</h4>
+                        <div class="space-y-3 text-legend-platinum">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-crimson rounded-full mr-3"></span>
+                                SIAC 중재 전문
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-crimson rounded-full mr-3"></span>
+                                Asia-Pacific Hub
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-legend-crimson rounded-full mr-3"></span>
+                                Cross-border Expertise
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <div class="text-legend-crimson font-bold">+65 XXXX-XXXX</div>
+                            <div class="text-legend-silver text-sm">SGT 24/7 Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Global Coverage Stats -->
+            <div class="bg-gradient-to-r from-legend-dark via-legend-black to-legend-dark rounded-3xl p-16 border-2 border-legend-gold/30" data-aos="fade-up">
+                <h3 class="text-4xl font-black text-legend-gold text-center mb-12">
+                    🌍 실시간 글로벌 커버리지
+                </h3>
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div class="group hover:scale-105 transition-all duration-300">
+                        <div class="text-5xl font-black text-legend-gold mb-3" data-count="247">0개</div>
+                        <div class="text-legend-platinum font-medium">글로벌 파트너</div>
+                        <div class="text-legend-silver text-sm">Magic Circle 포함</div>
+                    </div>
+                    <div class="group hover:scale-105 transition-all duration-300">
+                        <div class="text-5xl font-black text-legend-gold mb-3" data-count="47">0개</div>
+                        <div class="text-legend-platinum font-medium">국가 커버리지</div>
+                        <div class="text-legend-silver text-sm">5대륙 전체</div>
+                    </div>
+                    <div class="group hover:scale-105 transition-all duration-300">
+                        <div class="text-5xl font-black text-legend-gold mb-3">24/7</div>
+                        <div class="text-legend-platinum font-medium">실시간 지원</div>
+                        <div class="text-legend-silver text-sm">Time Zone 무관</div>
+                    </div>
+                    <div class="group hover:scale-105 transition-all duration-300">
+                        <div class="text-5xl font-black text-legend-gold mb-3" data-count="15">0분</div>
+                        <div class="text-legend-platinum font-medium">평균 응답시간</div>
+                        <div class="text-legend-silver text-sm">긴급상황 시</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📞 ULTRA PREMIUM CONTACT -->
+    <section id="legend-contact" class="py-32 bg-legend-black relative">
+        <div class="absolute inset-0 bg-luxury-pattern opacity-5"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
+                <!-- Premium Contact Info -->
+                <div data-aos="fade-right">
+                    <div class="inline-flex items-center bg-legend-crimson/20 text-legend-crimson px-8 py-4 rounded-full text-lg font-bold tracking-wider mb-12 border border-legend-crimson/30">
+                        <span class="text-2xl mr-3 animate-pulse">🚨</span>
+                        LEGEND CONSULTATION
+                        <span class="text-2xl ml-3 animate-pulse">🚨</span>
+                    </div>
+                    
+                    <h2 class="text-5xl lg:text-7xl font-legend font-black text-legend-gold mb-12 leading-tight">
+                        지금 바로<br>
+                        <span class="text-white">레전드와</span><br>
+                        <span class="text-legend-crimson">상담하세요</span>
+                    </h2>
+                    
+                    <p class="text-2xl text-legend-platinum mb-16 leading-relaxed">
+                        15년 무패신화의 전설이 당신의 승리를 보장합니다.<br>
+                        <span class="text-legend-gold font-bold">김앤장도 인정한 진짜 레전드</span>와 
+                        VIP 전용 핫라인으로 지금 연결하세요.
+                    </p>
+                    
+                    <!-- Ultra Premium Contact Methods -->
+                    <div class="space-y-10">
+                        <!-- Emergency Hotline -->
+                        <div class="group">
+                            <div class="flex items-center space-x-8 bg-gradient-to-r from-legend-crimson/30 via-legend-crimson/20 to-legend-crimson/10 rounded-3xl p-8 border-2 border-legend-crimson/40 hover:border-legend-crimson/80 transition-all duration-500 hover:scale-105">
+                                <div class="w-20 h-20 bg-legend-crimson rounded-2xl flex items-center justify-center animate-pulse shadow-2xl">
+                                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-black text-legend-crimson text-2xl mb-2">🚨 긴급 전용 핫라인</div>
+                                    <div class="text-legend-crimson font-black text-4xl mb-2">02-0000-LEGEND</div>
+                                    <div class="text-legend-platinum">24시간 즉시 연결 (평균 30초) • VIP 전용</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- VIP Email -->
+                        <div class="flex items-center space-x-8 group">
+                            <div class="w-20 h-20 bg-gold-gradient rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-legend-black" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                                 </svg>
                             </div>
                             <div>
-                                <div class="font-bold text-legend-gold text-lg">VIP 상담 신청</div>
-                                <div class="text-legend-gold font-bold text-xl">legend@premium-law.com</div>
-                                <div class="text-sm text-legend-platinum">평균 15분 내 전문가 직접 회신</div>
+                                <div class="font-black text-legend-gold text-2xl">👑 VIP 상담 신청</div>
+                                <div class="text-legend-gold font-black text-2xl">legend@premium-law.com</div>
+                                <div class="text-legend-platinum">평균 15분 내 전문가 직접 회신 • 암호화 보안</div>
                             </div>
                         </div>
                         
-                        <!-- 프리미엄 오피스 -->
-                        <div class="flex items-center space-x-6">
-                            <div class="w-16 h-16 bg-legend-platinum rounded-2xl flex items-center justify-center">
-                                <svg class="w-8 h-8 text-legend-black" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- Premium Office -->
+                        <div class="flex items-center space-x-8 group">
+                            <div class="w-20 h-20 bg-gradient-to-br from-legend-platinum to-legend-silver rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                                <svg class="w-10 h-10 text-legend-black" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                             <div>
-                                <div class="font-bold text-legend-platinum text-lg">레전드 본사</div>
-                                <div class="text-legend-platinum">서울시 강남구 테헤란로 152</div>
-                                <div class="text-legend-platinum">롯데월드타워 76~80층</div>
-                                <div class="text-sm text-legend-platinum">🚁 헬기패드 + 🚗 발렛파킹 완비</div>
+                                <div class="font-black text-legend-platinum text-2xl">🏛️ 레전드 본사</div>
+                                <div class="text-legend-platinum text-lg">서울시 강남구 테헤란로 152</div>
+                                <div class="text-legend-platinum text-lg">롯데월드타워 76~80층 (전층 독점)</div>
+                                <div class="text-legend-silver">🚁 헬기패드 + 🚗 발렛파킹 + 🏨 VIP 라운지 완비</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 레전드 상담 신청 폼 -->
-                <div class="bg-gradient-to-br from-legend-gold/10 to-legend-crimson/5 rounded-3xl p-12 border border-legend-gold/30 backdrop-blur-xl" data-aos="fade-left">
-                    <h3 class="text-4xl font-bold text-legend-gold mb-8 text-center">
-                        👑 레전드 상담 신청
-                    </h3>
+                <!-- Ultra Premium Contact Form -->
+                <div class="bg-gradient-to-br from-legend-gold/15 via-legend-gold/10 to-legend-crimson/5 rounded-3xl p-12 border-2 border-legend-gold/40 backdrop-blur-xl shadow-2xl" data-aos="fade-left">
+                    <div class="text-center mb-12">
+                        <h3 class="text-4xl font-black text-legend-gold mb-4">
+                            👑 레전드 VIP 상담 신청
+                        </h3>
+                        <p class="text-legend-platinum text-lg">
+                            김앤장도 인정한 진짜 레전드와의 특별한 만남
+                        </p>
+                    </div>
                     
                     <form class="space-y-8" onsubmit="handleLegendFormSubmit(event)">
+                        <!-- Basic Info -->
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-bold text-legend-gold mb-3">성함 *</label>
-                                <input type="text" required class="w-full px-6 py-4 bg-legend-black/50 border-2 border-legend-gold/30 rounded-xl text-white focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/20 transition-all font-medium" placeholder="성함을 입력해 주세요">
+                                <label class="block text-lg font-bold text-legend-gold mb-4">성함 *</label>
+                                <input type="text" required class="w-full px-8 py-5 bg-legend-black/60 border-2 border-legend-gold/40 rounded-2xl text-white text-lg focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/30 transition-all font-medium placeholder-legend-silver" placeholder="성함을 입력해 주세요">
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-legend-gold mb-3">직책/회사</label>
-                                <input type="text" class="w-full px-6 py-4 bg-legend-black/50 border-2 border-legend-gold/30 rounded-xl text-white focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/20 transition-all font-medium" placeholder="CEO, 회장, 총수 등">
+                                <label class="block text-lg font-bold text-legend-gold mb-4">직책/회사</label>
+                                <input type="text" class="w-full px-8 py-5 bg-legend-black/60 border-2 border-legend-gold/40 rounded-2xl text-white text-lg focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/30 transition-all font-medium placeholder-legend-silver" placeholder="CEO, 회장, 총수 등">
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-bold text-legend-gold mb-3">VIP 핫라인 *</label>
-                            <input type="tel" required class="w-full px-6 py-4 bg-legend-black/50 border-2 border-legend-gold/30 rounded-xl text-white focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/20 transition-all font-medium" placeholder="24시간 연결 가능한 번호">
+                            <label class="block text-lg font-bold text-legend-gold mb-4">VIP 핫라인 *</label>
+                            <input type="tel" required class="w-full px-8 py-5 bg-legend-black/60 border-2 border-legend-gold/40 rounded-2xl text-white text-lg focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/30 transition-all font-medium placeholder-legend-silver" placeholder="24시간 연결 가능한 VIP 번호">
                         </div>
                         
+                        <!-- Case Type -->
                         <div>
-                            <label class="block text-sm font-bold text-legend-gold mb-3">사건 유형 *</label>
-                            <select required class="w-full px-6 py-4 bg-legend-black/50 border-2 border-legend-gold/30 rounded-xl text-white focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/20 transition-all font-medium">
+                            <label class="block text-lg font-bold text-legend-gold mb-4">사건 유형 *</label>
+                            <select required class="w-full px-8 py-5 bg-legend-black/60 border-2 border-legend-gold/40 rounded-2xl text-white text-lg focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/30 transition-all font-medium">
                                 <option value="">레전드급 사건 유형 선택</option>
-                                <option value="재벌승계">👑 재벌 승계 분쟁</option>
-                                <option value="국제중재">🌍 국제 중재 소송</option>
-                                <option value="경제사범">⚖️ 화이트칼라 형사</option>
-                                <option value="대형MA">💼 대규모 M&A</option>
-                                <option value="위기관리">🚨 긴급 위기 관리</option>
-                                <option value="기타VIP">💎 기타 VIP 사건</option>
+                                <option value="재벌승계">👑 재벌 승계 분쟁 (김앤장 초월급)</option>
+                                <option value="국제중재">🌍 국제 중재 소송 (Magic Circle급)</option>
+                                <option value="경제사범">⚖️ 화이트칼라 형사 (대법원급)</option>
+                                <option value="대형MA">💼 대규모 M&A (조단위)</option>
+                                <option value="위기관리">🚨 긴급 위기 관리 (24시간)</option>
+                                <option value="기타VIP">💎 기타 VIP 사건 (특별상담)</option>
                             </select>
                         </div>
                         
+                        <!-- Case Scale -->
                         <div>
-                            <label class="block text-sm font-bold text-legend-gold mb-3">사건 규모 (추정)</label>
-                            <select class="w-full px-6 py-4 bg-legend-black/50 border-2 border-legend-gold/30 rounded-xl text-white focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/20 transition-all font-medium">
-                                <option value="">사건 규모 선택 (비밀보장)</option>
+                            <label class="block text-lg font-bold text-legend-gold mb-4">사건 규모 (추정)</label>
+                            <select class="w-full px-8 py-5 bg-legend-black/60 border-2 border-legend-gold/40 rounded-2xl text-white text-lg focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/30 transition-all font-medium">
+                                <option value="">사건 규모 선택 (절대 비밀보장)</option>
                                 <option value="100억미만">100억원 미만</option>
                                 <option value="100-1000억">100억 ~ 1,000억원</option>
                                 <option value="1000억-1조">1,000억 ~ 1조원</option>
-                                <option value="1조이상">1조원 이상</option>
+                                <option value="1조이상">💰 1조원 이상 (VIP 전용)</option>
                                 <option value="극비">🔒 극비 (직접 상담 시 논의)</option>
                             </select>
                         </div>
                         
+                        <!-- Situation -->
                         <div>
-                            <label class="block text-sm font-bold text-legend-gold mb-3">상황 설명 *</label>
-                            <textarea rows="5" required class="w-full px-6 py-4 bg-legend-black/50 border-2 border-legend-gold/30 rounded-xl text-white focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/20 transition-all font-medium resize-none" placeholder="상황을 자세히 설명해 주세요. 모든 정보는 절대 비밀이 보장됩니다."></textarea>
+                            <label class="block text-lg font-bold text-legend-gold mb-4">상황 설명 *</label>
+                            <textarea rows="6" required class="w-full px-8 py-5 bg-legend-black/60 border-2 border-legend-gold/40 rounded-2xl text-white text-lg focus:border-legend-gold focus:ring-4 focus:ring-legend-gold/30 transition-all font-medium resize-none placeholder-legend-silver" placeholder="김앤장도 못한 어려운 상황을 자세히 설명해 주세요. 모든 정보는 대법원급 비밀보장 시스템으로 보호됩니다."></textarea>
                         </div>
                         
+                        <!-- Urgency Level -->
                         <div>
-                            <label class="block text-sm font-bold text-legend-gold mb-3">긴급도</label>
+                            <label class="block text-lg font-bold text-legend-gold mb-4">긴급도</label>
                             <div class="grid grid-cols-3 gap-4">
-                                <label class="flex items-center bg-legend-black/30 rounded-lg p-4 cursor-pointer hover:bg-legend-gold/10 transition-all">
-                                    <input type="radio" name="urgency" value="normal" class="mr-3 text-legend-gold">
-                                    <span class="text-legend-platinum">일반 상담</span>
+                                <label class="flex items-center bg-legend-black/40 rounded-2xl p-6 cursor-pointer hover:bg-legend-gold/10 transition-all border border-legend-gold/20 hover:border-legend-gold/50">
+                                    <input type="radio" name="urgency" value="normal" class="mr-4 text-legend-gold w-5 h-5">
+                                    <div>
+                                        <div class="text-legend-platinum font-bold">일반 상담</div>
+                                        <div class="text-legend-silver text-sm">48시간 내</div>
+                                    </div>
                                 </label>
-                                <label class="flex items-center bg-legend-black/30 rounded-lg p-4 cursor-pointer hover:bg-legend-gold/10 transition-all">
-                                    <input type="radio" name="urgency" value="urgent" class="mr-3 text-legend-gold">
-                                    <span class="text-legend-gold">긴급 상담</span>
+                                <label class="flex items-center bg-legend-black/40 rounded-2xl p-6 cursor-pointer hover:bg-legend-gold/10 transition-all border border-legend-gold/20 hover:border-legend-gold/50">
+                                    <input type="radio" name="urgency" value="urgent" class="mr-4 text-legend-gold w-5 h-5">
+                                    <div>
+                                        <div class="text-legend-gold font-bold">긴급 상담</div>
+                                        <div class="text-legend-silver text-sm">6시간 내</div>
+                                    </div>
                                 </label>
-                                <label class="flex items-center bg-legend-crimson/20 rounded-lg p-4 cursor-pointer hover:bg-legend-crimson/30 transition-all">
-                                    <input type="radio" name="urgency" value="emergency" class="mr-3 text-legend-crimson">
-                                    <span class="text-legend-crimson font-bold">🚨 즉시</span>
+                                <label class="flex items-center bg-legend-crimson/20 rounded-2xl p-6 cursor-pointer hover:bg-legend-crimson/30 transition-all border border-legend-crimson/40 hover:border-legend-crimson/70">
+                                    <input type="radio" name="urgency" value="emergency" class="mr-4 text-legend-crimson w-5 h-5">
+                                    <div>
+                                        <div class="text-legend-crimson font-bold">🚨 즉시</div>
+                                        <div class="text-white text-sm">30초 내</div>
+                                    </div>
                                 </label>
                             </div>
                         </div>
                         
-                        <div class="flex items-start space-x-3">
-                            <input type="checkbox" required class="w-5 h-5 text-legend-gold border-2 border-legend-gold/30 rounded focus:ring-legend-gold mt-1">
-                            <label class="text-sm text-legend-platinum leading-relaxed">
+                        <!-- Privacy Agreement -->
+                        <div class="flex items-start space-x-4 p-6 bg-legend-black/40 rounded-2xl border border-legend-gold/30">
+                            <input type="checkbox" required class="w-6 h-6 text-legend-gold border-2 border-legend-gold/40 rounded focus:ring-legend-gold mt-1 flex-shrink-0">
+                            <label class="text-legend-platinum leading-relaxed">
                                 개인정보 수집 및 이용에 동의합니다. 수집된 모든 정보는 
-                                <span class="text-legend-gold font-bold">최고 수준의 비밀보장</span> 하에 
-                                상담 목적으로만 사용됩니다.
+                                <span class="text-legend-gold font-bold">국가기밀 수준의 보안시스템</span>으로 보호되며, 
+                                상담 목적으로만 사용됩니다. 
+                                <span class="text-legend-crimson font-bold">김앤장도 뚫을 수 없는 보안</span>을 보장합니다.
                             </label>
                         </div>
                         
-                        <button type="submit" class="w-full bg-gradient-to-r from-legend-gold to-yellow-400 text-legend-black py-6 rounded-xl font-bold text-xl hover:from-yellow-400 hover:to-legend-gold transition-all transform hover:scale-105 shadow-2xl">
-                            <span class="flex items-center justify-center">
-                                👑 레전드 상담 신청하기
-                                <svg class="w-6 h-6 ml-3" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-gold-gradient text-legend-black py-8 rounded-2xl font-black text-2xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border-4 border-transparent hover:border-legend-gold relative overflow-hidden group">
+                            <span class="flex items-center justify-center relative z-10">
+                                <span class="text-4xl mr-4">👑</span>
+                                레전드 VIP 상담 신청하기
+                                <svg class="w-8 h-8 ml-4 group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
                                 </svg>
                             </span>
+                            <div class="absolute inset-0 bg-legend-gold opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
                         </button>
                         
-                        <div class="text-center text-sm text-legend-platinum">
-                            <span class="text-legend-crimson">⚡</span> 
-                            긴급사건 평균 <span class="font-bold text-legend-gold">5분 내</span> 전문가 직접 연락
+                        <!-- Response Time Promise -->
+                        <div class="text-center bg-legend-crimson/10 rounded-2xl p-6 border border-legend-crimson/30">
+                            <div class="flex items-center justify-center space-x-3 text-legend-crimson text-lg font-bold">
+                                <span class="text-2xl animate-pulse">⚡</span>
+                                <span>긴급사건 평균 <span class="text-2xl">30초 내</span> 전문가 직접 연락</span>
+                                <span class="text-2xl animate-pulse">⚡</span>
+                            </div>
+                            <div class="text-legend-platinum text-sm mt-2">
+                                김앤장보다 빠른 대응속도 • 전 대법원장이 보증하는 신뢰성
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -573,124 +982,177 @@
         </div>
     </section>
 
-    <!-- 🏆 LEGEND FOOTER -->
-    <footer class="bg-gradient-to-t from-legend-black to-gray-900 text-white py-20 border-t border-legend-gold/20">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-4 gap-12 mb-16">
-                <!-- 레전드 로고 -->
+    <!-- 🏆 ULTRA PREMIUM FOOTER -->
+    <footer class="bg-legend-gradient text-white py-24 border-t-2 border-legend-gold/30 relative">
+        <div class="absolute inset-0 bg-luxury-pattern opacity-5"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-4 gap-16 mb-20">
+                <!-- Ultra Premium Logo -->
                 <div class="lg:col-span-2">
-                    <div class="flex items-center space-x-4 mb-8">
-                        <div class="w-16 h-16 bg-legend-gold rounded-2xl flex items-center justify-center">
-                            <span class="text-legend-black font-legend font-bold text-2xl">⚖</span>
+                    <div class="flex items-center space-x-6 mb-12">
+                        <div class="w-20 h-20 bg-gold-gradient rounded-3xl flex items-center justify-center shadow-2xl">
+                            <span class="text-legend-black font-legend font-black text-3xl">⚖</span>
                         </div>
                         <div>
-                            <div class="text-3xl font-legend font-bold text-legend-gold">LEGEND LAW FIRM</div>
-                            <div class="text-legend-platinum text-sm font-bold tracking-wider">15 YEARS UNDEFEATED LEGEND</div>
+                            <div class="text-4xl font-legend font-black text-legend-gold">LEGEND LAW FIRM</div>
+                            <div class="text-legend-platinum text-lg font-bold tracking-wider">15 YEARS UNDEFEATED LEGEND</div>
+                            <div class="text-legend-silver text-sm">김앤장도 인정한 대한민국 1위</div>
                         </div>
                     </div>
-                    <p class="text-legend-platinum text-lg leading-relaxed mb-8">
+                    <p class="text-legend-platinum text-xl leading-relaxed mb-12 max-w-2xl">
                         15년 무패신화를 이어가는 대한민국 최고의 법률 전문가들이 
-                        당신의 승리를 보장합니다. 재벌총수부터 글로벌 기업까지, 
-                        믿을 수 있는 레전드 파트너.
+                        당신의 승리를 보장합니다. 전 대법원장 인증, 글로벌 CEO 감사패, 
+                        재벌총수들의 선택. <span class="text-legend-gold font-bold">믿을 수 있는 진짜 레전드</span>입니다.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-12 h-12 bg-legend-gold/20 rounded-lg flex items-center justify-center hover:bg-legend-gold hover:text-legend-black transition-all">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    
+                    <!-- Awards & Certifications -->
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="bg-legend-gold/20 text-legend-gold px-4 py-2 rounded-lg text-sm font-bold border border-legend-gold/30">
+                            🏛️ 전 대법원장 인증
+                        </div>
+                        <div class="bg-legend-platinum/20 text-legend-platinum px-4 py-2 rounded-lg text-sm font-bold border border-legend-platinum/30">
+                            🌍 Goldman Sachs 감사패
+                        </div>
+                        <div class="bg-legend-crimson/20 text-legend-crimson px-4 py-2 rounded-lg text-sm font-bold border border-legend-crimson/30">
+                            👑 Magic Circle 파트너
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-6">
+                        <a href="#" class="w-14 h-14 bg-legend-gold/20 rounded-2xl flex items-center justify-center hover:bg-legend-gold hover:text-legend-black transition-all duration-300 hover:scale-110 border border-legend-gold/30">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-14 h-14 bg-legend-gold/20 rounded-2xl flex items-center justify-center hover:bg-legend-gold hover:text-legend-black transition-all duration-300 hover:scale-110 border border-legend-gold/30">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
                 
-                <!-- 레전드 서비스 -->
+                <!-- Legend Services -->
                 <div>
-                    <h4 class="text-xl font-bold text-legend-gold mb-8">Legend Services</h4>
-                    <ul class="space-y-4 text-legend-platinum">
-                        <li><a href="#" class="hover:text-legend-gold transition-colors">👑 재벌 승계 분쟁</a></li>
-                        <li><a href="#" class="hover:text-legend-gold transition-colors">🌍 국제 중재 소송</a></li>
-                        <li><a href="#" class="hover:text-legend-gold transition-colors">⚖️ 화이트칼라 형사</a></li>
-                        <li><a href="#" class="hover:text-legend-gold transition-colors">💼 대규모 M&A</a></li>
-                        <li><a href="#" class="hover:text-legend-gold transition-colors">🚨 긴급 위기 관리</a></li>
-                        <li><a href="#" class="hover:text-legend-gold transition-colors">✈️ 글로벌 법률 서비스</a></li>
+                    <h4 class="text-2xl font-black text-legend-gold mb-10">Legend Services</h4>
+                    <ul class="space-y-5 text-legend-platinum">
+                        <li><a href="#" class="hover:text-legend-gold transition-colors text-lg flex items-center group">
+                            <span class="mr-3 text-2xl group-hover:scale-110 transition-transform">👑</span>
+                            재벌 승계 분쟁
+                        </a></li>
+                        <li><a href="#" class="hover:text-legend-gold transition-colors text-lg flex items-center group">
+                            <span class="mr-3 text-2xl group-hover:scale-110 transition-transform">🌍</span>
+                            국제 중재 소송
+                        </a></li>
+                        <li><a href="#" class="hover:text-legend-gold transition-colors text-lg flex items-center group">
+                            <span class="mr-3 text-2xl group-hover:scale-110 transition-transform">⚖️</span>
+                            화이트칼라 형사
+                        </a></li>
+                        <li><a href="#" class="hover:text-legend-gold transition-colors text-lg flex items-center group">
+                            <span class="mr-3 text-2xl group-hover:scale-110 transition-transform">💼</span>
+                            대규모 M&A
+                        </a></li>
+                        <li><a href="#" class="hover:text-legend-gold transition-colors text-lg flex items-center group">
+                            <span class="mr-3 text-2xl group-hover:scale-110 transition-transform">🚨</span>
+                            긴급 위기 관리
+                        </a></li>
+                        <li><a href="#" class="hover:text-legend-gold transition-colors text-lg flex items-center group">
+                            <span class="mr-3 text-2xl group-hover:scale-110 transition-transform">✈️</span>
+                            글로벌 법률 서비스
+                        </a></li>
                     </ul>
                 </div>
                 
-                <!-- 레전드 연락처 -->
+                <!-- Ultra Premium Contact -->
                 <div>
-                    <h4 class="text-xl font-bold text-legend-gold mb-8">Legend Contact</h4>
-                    <div class="space-y-6 text-legend-platinum">
-                        <div>
-                            <div class="font-bold text-legend-crimson">🚨 긴급 핫라인</div>
-                            <div class="text-legend-gold font-bold text-xl">02-0000-LEGEND</div>
+                    <h4 class="text-2xl font-black text-legend-gold mb-10">Legend Contact</h4>
+                    <div class="space-y-8 text-legend-platinum">
+                        <div class="group">
+                            <div class="font-bold text-legend-crimson text-xl mb-2 flex items-center">
+                                <span class="mr-3 text-2xl animate-pulse">🚨</span>
+                                긴급 핫라인
+                            </div>
+                            <div class="text-legend-gold font-black text-3xl group-hover:scale-105 transition-transform">02-0000-LEGEND</div>
+                            <div class="text-legend-silver text-sm">24시간 VIP 전용 • 평균 30초 연결</div>
                         </div>
                         <div>
-                            <div class="font-bold text-white">VIP 상담</div>
-                            <div>legend@premium-law.com</div>
+                            <div class="font-bold text-legend-gold text-lg mb-2">👑 VIP 상담</div>
+                            <div class="text-legend-platinum text-lg">legend@premium-law.com</div>
+                            <div class="text-legend-silver text-sm">15분 내 전문가 직접 회신</div>
                         </div>
                         <div>
-                            <div class="font-bold text-white">Legend Tower</div>
-                            <div>서울시 강남구 테헤란로 152<br>롯데월드타워 76~80층</div>
+                            <div class="font-bold text-legend-platinum text-lg mb-2">🏛️ Legend Tower</div>
+                            <div class="text-legend-platinum">서울시 강남구 테헤란로 152</div>
+                            <div class="text-legend-platinum">롯데월드타워 76~80층</div>
+                            <div class="text-legend-silver text-sm">🚁 헬기패드 + 🚗 발렛파킹 + 🏨 VIP 라운지</div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- 레전드 하단 -->
-            <div class="border-t border-legend-gold/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-4 md:mb-0">
-                    <p class="text-legend-platinum">&copy; 2025 Legend Law Firm. All rights reserved.</p>
-                    <p class="text-sm text-legend-platinum/60 mt-2">
-                        Powered by <span class="text-legend-gold font-bold">Premium Template Factory</span> 🚀
+            <!-- Ultra Premium Bottom -->
+            <div class="border-t-2 border-legend-gold/30 pt-12 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-6 md:mb-0">
+                    <p class="text-legend-platinum text-lg">&copy; 2025 Legend Law Firm. All rights reserved.</p>
+                    <p class="text-legend-silver mt-2">
+                        Powered by <span class="text-legend-gold font-bold">Premium Template Factory</span> 🚀 | 
+                        <span class="text-legend-crimson font-bold">김앤장도 인정한 진짜 레전드</span>
                     </p>
                 </div>
-                <div class="flex space-x-8 text-sm text-legend-platinum">
-                    <a href="#" class="hover:text-legend-gold transition-colors">개인정보처리방침</a>
-                    <a href="#" class="hover:text-legend-gold transition-colors">이용약관</a>
-                    <a href="#" class="hover:text-legend-gold transition-colors">사이트맵</a>
+                <div class="flex space-x-8 text-legend-platinum">
+                    <a href="#" class="hover:text-legend-gold transition-colors font-medium">개인정보처리방침</a>
+                    <a href="#" class="hover:text-legend-gold transition-colors font-medium">이용약관</a>
+                    <a href="#" class="hover:text-legend-gold transition-colors font-medium">사이트맵</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- 🎬 LEGEND JAVASCRIPT -->
+    <!-- 🎬 ULTRA PREMIUM JAVASCRIPT -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // 레전드 인트로 애니메이션
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Ultra Premium Intro Animation
         window.addEventListener('load', () => {
             const intro = document.getElementById('legend-intro');
             
-            // 3초 후 인트로 사라짐
+            // 4초 후 인트로 사라짐 (더 긴 시간으로 프리미엄 느낌)
             setTimeout(() => {
                 gsap.to(intro, {
-                    duration: 1,
+                    duration: 1.5,
                     opacity: 0,
-                    scale: 1.2,
-                    ease: "power2.out",
+                    scale: 1.1,
+                    ease: "power3.out",
                     onComplete: () => {
                         intro.style.display = 'none';
                         
                         // 메인 콘텐츠 등장
                         gsap.from("body", {
-                            duration: 1,
+                            duration: 1.5,
                             opacity: 0,
-                            ease: "power2.out"
+                            ease: "power3.out"
                         });
+                        
+                        // 스크롤 트리거 활성화
+                        initScrollTriggers();
                     }
                 });
-            }, 3000);
+            }, 4000);
         });
 
-        // AOS 초기화 (레전드 버전)
+        // AOS 초기화 (Ultra Premium Version)
         AOS.init({
-            duration: 1200,
+            duration: 1500,
             easing: 'ease-out-cubic',
             once: true,
-            offset: 100,
-            delay: 100
+            offset: 120,
+            delay: 200
         });
 
-        // 레전드 카운터 애니메이션
+        // Ultra Premium Counter Animation
         function animateLegendCounters() {
             const counters = document.querySelectorAll('[data-count]');
             
@@ -698,20 +1160,20 @@
                 const target = parseInt(counter.getAttribute('data-count'));
                 const text = counter.textContent;
                 const prefix = text.includes('₩') ? '₩' : '';
-                const suffix = text.includes('조') ? '조' : text.includes('건') ? '건' : text.includes('개') ? '개' : '';
+                const suffix = text.includes('조') ? '조' : text.includes('건') ? '건' : text.includes('개') ? '개' : text.includes('분') ? '분' : '';
                 
                 gsap.to({value: 0}, {
                     value: target,
-                    duration: 3,
-                    ease: "power2.out",
+                    duration: 4,
+                    ease: "power3.out",
                     onUpdate: function() {
-                        counter.textContent = prefix + Math.floor(this.targets()[0].value) + suffix;
+                        counter.textContent = prefix + Math.floor(this.targets()[0].value).toLocaleString() + suffix;
                     }
                 });
             });
         }
 
-        // 레전드 네비게이션 효과
+        // Ultra Premium Navigation Effects
         const navbar = document.querySelector('nav');
         let lastScrollY = window.scrollY;
 
@@ -719,58 +1181,112 @@
             const scrollY = window.scrollY;
             
             if (scrollY > 100) {
-                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+                navbar.style.backdropFilter = 'blur(30px)';
+                navbar.style.borderBottom = '2px solid rgba(255, 215, 0, 0.4)';
+                navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
                 navbar.style.backdropFilter = 'blur(20px)';
                 navbar.style.borderBottom = '1px solid rgba(255, 215, 0, 0.3)';
-            } else {
-                navbar.style.background = 'rgba(10, 10, 10, 0.8)';
-                navbar.style.backdropFilter = 'blur(10px)';
-                navbar.style.borderBottom = '1px solid rgba(255, 215, 0, 0.2)';
+                navbar.style.boxShadow = 'none';
             }
 
-            // 스크롤 시 숨김/표시
-            if (scrollY > lastScrollY && scrollY > 200) {
-                gsap.to(navbar, {duration: 0.3, y: -100, ease: "power2.out"});
+            // 스크롤 시 숨김/표시 (Ultra Smooth)
+            if (scrollY > lastScrollY && scrollY > 300) {
+                gsap.to(navbar, {duration: 0.5, y: -120, ease: "power3.out"});
             } else {
-                gsap.to(navbar, {duration: 0.3, y: 0, ease: "power2.out"});
+                gsap.to(navbar, {duration: 0.5, y: 0, ease: "power3.out"});
             }
             
             lastScrollY = scrollY;
         });
 
-        // 스크롤 시 카운터 애니메이션
-        const statsSection = document.querySelector('.grid[data-aos="fade-up"][data-aos-delay="800"]');
-        let statsAnimated = false;
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    animateLegendCounters();
-                    statsAnimated = true;
+        // Scroll Triggers 초기화
+        function initScrollTriggers() {
+            // Stats Counter Animation
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".grid[data-aos='fade-up'][data-aos-delay='800']",
+                    start: "top 80%",
+                    onEnter: () => animateLegendCounters()
                 }
             });
-        });
 
-        if (statsSection) {
-            observer.observe(statsSection);
+            // Case Studies Hover Effects
+            gsap.utils.toArray('.group').forEach((card, i) => {
+                gsap.set(card, {transformOrigin: "center center"});
+                
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        duration: 0.4,
+                        scale: 1.05,
+                        rotationY: 5,
+                        ease: "power2.out"
+                    });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        duration: 0.4,
+                        scale: 1,
+                        rotationY: 0,
+                        ease: "power2.out"
+                    });
+                });
+            });
+
+            // Parallax Effects for Premium Elements
+            gsap.utils.toArray('.bg-luxury-pattern').forEach(element => {
+                gsap.to(element, {
+                    yPercent: -50,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+            });
         }
 
-        // 폼 제출 처리
+        // Ultra Premium Form Submission
         function handleLegendFormSubmit(event) {
             event.preventDefault();
             
-            // 로딩 애니메이션
             const submitBtn = event.target.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
-            submitBtn.innerHTML = '<span class="flex items-center justify-center"><div class="animate-spin rounded-full h-6 w-6 border-b-2 border-legend-black mr-3"></div>레전드 처리 중...</span>';
+            // Ultra Premium Loading Animation
+            submitBtn.innerHTML = `
+                <span class="flex items-center justify-center">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-4 border-legend-black mr-4"></div>
+                    레전드 처리 중... 김앤장도 놀랄 속도로
+                </span>
+            `;
             submitBtn.disabled = true;
             
-            // 3초 후 성공 메세지
+            // 5초 후 성공 메시지 (더 프리미엄한 시간)
             setTimeout(() => {
-                submitBtn.innerHTML = '<span class="flex items-center justify-center">✅ 신청 완료! VIP 상담사가 연락드립니다</span>';
+                submitBtn.innerHTML = `
+                    <span class="flex items-center justify-center">
+                        <span class="text-4xl mr-4">✅</span>
+                        신청 완료! VIP 레전드 상담사가 30초 내 연락드립니다
+                        <span class="text-4xl ml-4">👑</span>
+                    </span>
+                `;
                 submitBtn.classList.add('bg-green-600', 'hover:bg-green-700');
-                submitBtn.classList.remove('bg-gradient-to-r', 'from-legend-gold', 'to-yellow-400');
+                submitBtn.classList.remove('bg-gold-gradient');
+                
+                // 성공 애니메이션
+                gsap.to(submitBtn, {
+                    scale: 1.1,
+                    duration: 0.3,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power2.out"
+                });
                 
                 // 폼 리셋
                 setTimeout(() => {
@@ -778,51 +1294,123 @@
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                     submitBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
-                    submitBtn.classList.add('bg-gradient-to-r', 'from-legend-gold', 'to-yellow-400');
-                }, 3000);
-            }, 3000);
+                    submitBtn.classList.add('bg-gold-gradient');
+                }, 5000);
+            }, 5000);
         }
 
-        // 부드러운 스크롤
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburger = document.getElementById('hamburger');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                hamburger.textContent = '✕';
+                gsap.from(mobileMenu.children[0].children, {
+                    duration: 0.5,
+                    y: -20,
+                    opacity: 0,
+                    stagger: 0.1,
+                    ease: "power2.out"
+                });
+            } else {
+                mobileMenu.classList.add('hidden');
+                hamburger.textContent = '☰';
+            }
+        }
+
+        // Ultra Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: {
+                            y: target,
+                            offsetY: 100
+                        },
+                        ease: "power3.out"
                     });
                 }
             });
         });
 
-        // 마우스 커서 효과
+        // Ultra Premium Cursor Effect
+        let cursor = null;
+        
         document.addEventListener('mousemove', (e) => {
-            const cursor = document.querySelector('.cursor');
             if (!cursor) {
-                const newCursor = document.createElement('div');
-                newCursor.classList.add('cursor');
-                newCursor.style.cssText = `
+                cursor = document.createElement('div');
+                cursor.classList.add('legend-cursor');
+                cursor.style.cssText = `
                     position: fixed;
-                    width: 20px;
-                    height: 20px;
-                    background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+                    width: 24px;
+                    height: 24px;
+                    background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, rgba(255,215,0,0.1) 50%, transparent 100%);
                     border-radius: 50%;
                     pointer-events: none;
                     z-index: 9999;
-                    mix-blend-mode: difference;
+                    mix-blend-mode: screen;
+                    border: 2px solid rgba(255,215,0,0.3);
                 `;
-                document.body.appendChild(newCursor);
+                document.body.appendChild(cursor);
             }
             
-            gsap.to('.cursor', {
-                duration: 0.1,
-                x: e.clientX - 10,
-                y: e.clientY - 10,
+            gsap.to(cursor, {
+                duration: 0.2,
+                x: e.clientX - 12,
+                y: e.clientY - 12,
                 ease: "power2.out"
             });
         });
+
+        // Interactive Elements Hover Effects
+        document.addEventListener('DOMContentLoaded', () => {
+            // Button Hover Effects
+            gsap.utils.toArray('button, .group').forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    gsap.to(element, {
+                        duration: 0.3,
+                        filter: 'brightness(1.1) saturate(1.2)',
+                        ease: "power2.out"
+                    });
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    gsap.to(element, {
+                        duration: 0.3,
+                        filter: 'brightness(1) saturate(1)',
+                        ease: "power2.out"
+                    });
+                });
+            });
+        });
+
+        // Loading Bar Animation for Intro
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes loadingBar {
+                0% { width: 0%; }
+                100% { width: 100%; }
+            }
+            
+            @keyframes goldShimmer {
+                0% { background-position: -200% 0; }
+                100% { background-position: 200% 0; }
+            }
+            
+            .animate-gold-shimmer {
+                background: linear-gradient(90deg, transparent, rgba(255,215,0,0.4), transparent);
+                background-size: 200% 100%;
+                animation: goldShimmer 2s linear infinite;
+            }
+        `;
+        document.head.appendChild(style);
+
+        console.log('🏆 LEGEND LAW FIRM 로드 완료 - 김앤장도 울고 간 프리미엄 웹사이트');
     </script>
 </body>
 </html>
